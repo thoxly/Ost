@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портал клиента</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .container-fluid {
+      padding-top: 20px;
+    }
+    .sidebar {
+      height: 100vh;
+      padding-top: 20px;
+      background-color: #003366;
+    }
+    .sidebar .nav-link {
+      color: white;
+    }
+    .sidebar .nav-link.active {
+      font-weight: bold;
+    }
+    .main-content {
+      padding-top: 20px;
+    }
+    .content-block {
+      margin-bottom: 20px;
+    }
+    .card-deck-custom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .card-deck-custom .card {
+      flex: 0 0 48%;
+      margin-bottom: 20px;
+    }
+    .empty-message {
+      text-align: center;
+      color: #666;
+    }
+    .element-card .btn {
+      display: block;
+      margin: auto;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+        <div class="sidebar-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" id="link-home">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" id="link-company">Моя компания</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 main-content">
+        <div id="home" class="content-block">
+          <h2>Главная</h2>
+          <div class="card-deck-custom">
+            <div class="card">
+              <div class="card-header">
+                Мои проекты
+              </div>
+              <div class="card-body">
+                <div class="empty-message">Место для ваших проектов</div>
+                <button class="btn btn-primary">+ Добавить новый</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                Мои гарантийные письма
+              </div>
+              <div class="card-body">
+                <div class="empty-message">Место для гарантийные письма</div>
+                <button class="btn btn-primary" id="addWarrantyButton">+ Добавить новый</button>
+                <input type="file" id="warrantyFileInput" style="display:none;">
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                Мои договоры
+              </div>
+              <div class="card-body">
+                <div class="empty-message">Место для ваших договоров</div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                Мои согласования
+              </div>
+              <div class="card-body">
+                <div class="empty-message">Место для ваших согласований</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="company" class="content-block" style="display:none;">
+          <h2>Моя компания</h2>
+          <form id="companyForm">
+            <div class="card mb-4">
+              <div class="card-header">Юридическое лицо</div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="companyName">Наименование организации</label>
+                  <input type="text" class="form-control" id="companyName" name="companyName" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="companyInn">ИНН</label>
+                  <input type="text" class="form-control" id="companyInn" name="companyInn" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="companyKpp">КПП</label>
+                  <input type="text" class="form-control" id="companyKpp" name="companyKpp" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-4">
+              <div class="card-header">Контактное лицо</div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="contactPhone">Телефон</label>
+                  <input type="text" class="form-control" id="contactPhone" name="contactPhone" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="contactLastName">Фамилия</label>
+                  <input type="text" class="form-control" id="contactLastName" name="contactLastName" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="contactFirstName">Имя</label>
+                  <input type="text" class="form-control" id="contactFirstName" name="contactFirstName" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="contactMiddleName">Отчество</label>
+                  <input type="text" class="form-control" id="contactMiddleName" name="contactMiddleName" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="contactEmail">Электронная почта</label>
+                  <input type="email" class="form-control" id="contactEmail" name="contactEmail" disabled>
+                </div>
+                <div class="form-group">
+                  <label for="contactTelegram">Телеграм</label>
+                  <input type="text" class="form-control" id="contactTelegram" name="contactTelegram" disabled>
+                </div>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary" id="editButton">Редактировать</button>
+            <button type="submit" class="btn btn-success" id="saveButton" style="display:none;">Сохранить</button>
+            <button type="button" class="btn btn-secondary" id="cancelButton" style="display:none;">Отменить</button>
+          </form>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/company.js"></script>
+</body>
+</html>

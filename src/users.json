@@ -1,0 +1,38 @@
+[
+  {
+    "companyName": "ООО Альфа Центавра",
+    "companyInn": "6123435671",
+    "companyKpp": "6123435671",
+    "contactPhone": "89103894937",
+    "contactFirstName": "Глеб",
+    "contactLastName": "Перевалов",
+    "contactMiddleName": "",
+    "contactEmail": "glebperevalov@gmail.com",
+    "contactTelegram": "",
+    "password": "qwerty"
+  },
+  {
+    "companyName": "ООО Букашка",
+    "companyInn": "5223435672",
+    "companyKpp": "5223435672",
+    "contactPhone": "89103894937",
+    "contactFirstName": "Глеб",
+    "contactLastName": "Перевалов",
+    "contactMiddleName": "",
+    "contactEmail": "glebperevalov@gmail.com",
+    "contactTelegram": "",
+    "password": "qwerty"
+  },
+  {
+    "companyName": "ООО Альфа Центавра",
+    "companyInn": "6123435672",
+    "companyKpp": "6123435672",
+    "contactPhone": "89103894937",
+    "contactFirstName": "Глеб",
+    "contactLastName": "Перевалов",
+    "contactMiddleName": "",
+    "contactEmail": "glebperevalov@gmail.com",
+    "contactTelegram": "",
+    "password": "qwer"
+  }
+]

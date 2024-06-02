@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Авторизация и Регистрация</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .auth-container {
+      max-width: 600px;
+      margin: auto;
+      padding-top: 50px;
+    }
+    .form-control {
+      margin-bottom: 15px;
+    }
+    .toggle-password {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container auth-container">
+    <h2 class="text-center mb-4">Вход в систему</h2>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginInn">Логин</label>
+        <input type="text" class="form-control" id="loginInn" name="inn" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Пароль</label>
+        <div class="input-group">
+          <input type="password" class="form-control" id="loginPassword" name="password" required>
+          <div class="input-group-append">
+            <span class="input-group-text toggle-password" onclick="togglePasswordVisibility('loginPassword')">👁</span>
+          </div>
+        </div>
+      </div>
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" id="rememberMe">
+        <label class="form-check-label" for="rememberMe">Запомнить меня</label>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Войти</button>
+    </form>
+    <div class="text-center mt-3">
+      <a href="#">Забыли пароль?</a><br>
+      <a href="#" id="showRegisterForm">Нет аккаунта? Зарегистрируйтесь</a>
+    </div>
+    <hr>
+    <div id="registerFormContainer" style="display: none;">
+      <h2 class="text-center mb-4">Регистрация</h2>
+      <form id="registerForm">
+        <div class="card mb-4">
+          <div class="card-header">Юридическое лицо</div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="companyName">Наименование организации</label>
+              <input type="text" class="form-control" id="companyName" name="companyName">
+            </div>
+            <div class="form-group">
+              <label for="companyInn">ИНН</label>
+              <input type="text" class="form-control" id="companyInn" name="companyInn">
+            </div>
+            <div class="form-group">
+              <label for="companyKpp">КПП</label>
+              <input type="text" class="form-control" id="companyKpp" name="companyKpp">
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-header">Контактное лицо</div>
+          <div class="card-body">
+            <div class="form-group">
+              <label for="contactPhone">Телефон</label>
+              <input type="text" class="form-control" id="contactPhone" name="contactPhone">
+            </div>
+            <div class="form-group">
+              <label for="contactLastName">Фамилия</label>
+              <input type="text" class="form-control" id="contactLastName" name="contactLastName">
+            </div>
+            <div class="form-group">
+              <label for="contactFirstName">Имя</label>
+              <input type="text" class="form-control" id="contactFirstName" name="contactFirstName">
+            </div>
+            <div class="form-group">
+              <label for="contactMiddleName">Отчество</label>
+              <input type="text" class="form-control" id="contactMiddleName" name="contactMiddleName">
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Электронная почта</label>
+              <input type="email" class="form-control" id="contactEmail" name="contactEmail">
+            </div>
+            <div class="form-group">
+              <label for="contactTelegram">Телеграм</label>
+              <input type="text" class="form-control" id="contactTelegram" name="contactTelegram">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="registerPassword">Пароль</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="registerPassword" name="password" required>
+            <div class="input-group-append">
+              <span class="input-group-text toggle-password" onclick="togglePasswordVisibility('registerPassword')">👁</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="confirmPassword">Подтвердите пароль</label>
+          <div class="input-group">
+            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+            <div class="input-group-append">
+              <span class="input-group-text toggle-password" onclick="togglePasswordVisibility('confirmPassword')">👁</span>
+            </div>
+          </div>
+        </div>
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="consentCheckbox" required>
+          <label class="form-check-label" for="consentCheckbox">Я согласен с обработкой персональных данных</label>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Зарегистрироваться</button>
+      </form>
+      <div class="text-center mt-3">
+        <a href="#" id="showLoginForm">Уже есть аккаунт? Войдите</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
